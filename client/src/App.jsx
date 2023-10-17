@@ -1,12 +1,22 @@
 import './App.css'
-import Nav from './components/Nav'
+import { Route, Routes } from "react-router-dom";
+import LoginPage from './pages/LoginPage';
+import Layout from './Layout';
+import IndexPage from './pages/IndexPage';
+import RegisterPage from './pages/RegisterPage';
 
-const App = () => (
 
-  <main className="relative">
-    <Nav/>
-  </main>
-  
-)
+function App() {
 
+  return (
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<IndexPage />}/>
+        <Route path="/login" element={<LoginPage />}/>
+        <Route path="/register" element={<RegisterPage />}/>
+      </Route>
+    </Routes>
+  )
+
+}
 export default App
