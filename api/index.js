@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const { default: mongoose } = require('mongoose');
 require('dotenv').config();
-
 const app = express();
 
 app.use(express.json());
@@ -29,6 +28,7 @@ app.post('/register', (req, res) => {
 });
 
 app.listen(4000);
+
 
 
 
