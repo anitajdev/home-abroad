@@ -4,6 +4,7 @@ const { default: mongoose } = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('./models/User.js');
+const Place = require('./models/Place.js');
 const cookieParser = require('cookie-parser');
 const imageDownloader = require('image-downloader');
 const multer = require('multer');
@@ -115,6 +116,32 @@ app.post('/uploads', photosMiddleware.array('photos', 100), (req, res) => {
         uploadedFiles.push(newPath.replace('uploads\\', '/'));
     }
     res.json(uploadedFiles);
+});
+
+
+app.post('/places', (req, res) => {
+    const {token} = req.cookies;
+    const {
+        title, address, addedPhotos, description, 
+        perks, extraInfo, checkIn, checkOut, maxGuests
+    } = req.body;
+    jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+        if (err) throw err; 
+        const placeDoc = await Place.create({
+            owner:userData.id,
+            title, address, addedPhotos, description, 
+            perks, extraInfo, checkIn, checkOut, maxGuests
+        });
+        res.json(placeDoc);
+    });
+});
+
+app.get('/places', (req, res) => {
+    
+
+
+
+
 });
 
 
