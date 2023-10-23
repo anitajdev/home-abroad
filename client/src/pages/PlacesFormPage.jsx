@@ -21,7 +21,18 @@ const PlacesFormPage = () => {
     if(!id) {
       return;
     }
-    axios.get('/places/'+id);
+    axios.get('/places/'+id).then(response => {
+      const {data} = response;
+      setTitle(data.title);
+      setAddress(data.address);
+      setAddedPhotos(data.photos);
+      setDescription(data.description);
+      setPerks(data.perks);
+      setExtraInfo(data.extraInfo);
+      setCheckIn(data.checkIn);
+      setCheckOut(data.checkOut);
+      setMaxGuests(data.maxGuests);
+    });
   }, [id]);
 
   function inputHeader(text) {
@@ -46,14 +57,25 @@ const PlacesFormPage = () => {
   }
 
 
-  async function addNewPlace (ev) {
+  async function savePlace (ev) {
     ev.preventDefault();
-    await axios.post('/places', {
-        title, address, addedPhotos,
-        description, perks, extraInfo,
-        checkIn, checkOut, maxGuests
-    });
-    setRedirect(true);
+    const placeData =  {
+      title, address, addedPhotos,
+      description, perks, extraInfo,
+      checkIn, checkOut, maxGuests
+    }
+    if(id) {
+      //update 
+      await axios.put('/places', {
+        id, ...placeData
+      });
+      setRedirect(true);
+
+    } else {
+      //new place
+      await axios.post('/places', {placeData});
+      setRedirect(true);
+    }
   }
 
 
@@ -64,7 +86,7 @@ const PlacesFormPage = () => {
   return (
     <div>
      <AccountNav />
-     <form onSubmit={addNewPlace}>
+     <form onSubmit={savePlace}>
         {preInput("Title", "Title for your place. Should be short and catchy as in advertisement")}
         <input type="text" value={title} onChange={ev => setTitle(ev.target.value)} placeholder="title, for example: My lovely apartment"/>
         {preInput("Address", "Address to this place")}
