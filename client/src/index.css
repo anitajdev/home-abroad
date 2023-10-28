@@ -29,6 +29,14 @@
     height: 140px;
   }
 
+  input#location{
+    @apply my-1 py-2 px-5 rounded-2xl border border-gray-500 shadow-md shadow-gray-300 w-80;
+  }
+
+  .searchIcon{
+    @apply absolute right-5 text-gray-400;
+  }
+
   button.primary {
     @apply w-full bg-red-500 text-white rounded-2xl py-2;
   }
@@ -41,7 +49,7 @@
   }
 
   .padding-x {
-    @apply sm:px-16 px-8;
+    @apply sm:px-20 px-8;
   }
 
   .padding-y {

@@ -1,10 +1,10 @@
-import Nav from "./components/Nav"
+import Header from "./components/Header"
 import { Outlet } from "react-router-dom"
 
 const Layout = () => {
   return (
     <div className="py-4 px-8 flex flex-col min-h-screen">
-        <Nav />
+        <Header />
         <Outlet />
     </div>
   )
