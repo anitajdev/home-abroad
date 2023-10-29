@@ -7,38 +7,6 @@ const IndexPage = () => {
   const [places, setPlaces] = useState([]);
   const [searchLocation, setSearchLocation] = useState("");
 
-  // useEffect(() => {
-  //       axios.get('/places').then(response => {
-  //         setPlaces(response.data);
-  //     }
-  //   );
-  // },[]);
-
-  // useEffect(() => {
-  //   if(searchLocation){
-  //     axios.get('/places').then(response => {
-  //       const filteredPlaces = response.data.filter(elem => elem.address.toLowerCase().indexOf(searchLocation.trim().toLowerCase()) !== -1);
-  //       setPlaces(filteredPlaces);
-  //     });
-  //   }
-  // },[searchLocation]);
-
-  // OVO ODMAH ISPOD RADI SUPER !!! 
-
-  // useEffect(() => {
-  //   if(!searchLocation){
-  //   axios.get('/places').then(response => {
-  //             setPlaces(response.data);
-  //         }
-  //     )};
-  //   if(searchLocation){
-  //     axios.get('/places').then(response => {
-  //       const filteredPlaces = response.data.filter(elem => elem.address.toLowerCase().indexOf(searchLocation.trim().toLowerCase()) !== -1);
-  //       setPlaces(filteredPlaces);
-  //     });
-  //   }
-  // },[searchLocation]);
-
   useEffect(() => {
     if(!searchLocation){
     axios.get('/places').then(response => {
@@ -64,7 +32,7 @@ const IndexPage = () => {
 
   return (
 
-   // filters
+   // search filter
 
     <div id="places">
       <div className="flex items-center relative w-80 ">
@@ -88,7 +56,7 @@ const IndexPage = () => {
             <h2 className="font-bold">{place.address}</h2>
             <h3 className="text-sm text-gray-500">{place.title}</h3>
             <div className="mt-1">
-              <span className="font-bold">${place.price}</span> per night
+              <span className="font-bold">{place.price}€</span> per night
             </div>
           </Link>
         ))}
