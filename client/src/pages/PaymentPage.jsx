@@ -5,6 +5,7 @@ import PlaceGallery from "../PlaceGallery";
 import BookingDates from "../BookingDates";
 import PlaceImg from "../PlaceImg";
 import AddressLink from "../AddressLink";
+import Card from "../components/Card";
 
 const PaymentPage = () => {
     const {id} = useParams();
@@ -48,7 +49,9 @@ const PaymentPage = () => {
                 </div>
             </div>
         </div>
-        <div>Credit Card section</div>
+        <div>
+            <Card />
+        </div>
     </div>
   );
 }
