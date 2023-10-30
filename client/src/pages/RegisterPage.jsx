@@ -15,6 +15,9 @@ export default function RegisterPage() {
 
   async function registerUser(ev) {
     ev.preventDefault();
+    if(password !== repeatPassword){
+      alert("Passwords don't match.")
+    } else {
       try {
         await axios.post('/register', {
           name,
@@ -25,6 +28,7 @@ export default function RegisterPage() {
       } catch (e) {
         alert('Registration failed. Please try again later');
       }
+    }
   }
 
     return (
@@ -82,7 +86,7 @@ export default function RegisterPage() {
           </div>
           <TextInput
             id="email2"
-            placeholder="name@flowbite.com"
+            placeholder="name@gmail.com"
             required
             shadow
             type="email"
@@ -101,6 +105,8 @@ export default function RegisterPage() {
             id="password2"
             required
             shadow
+            minLength={8}
+            maxLength={16}
             type="password"
             value={password} 
             onChange={ev => setPassword(ev.target.value)}
