@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     'node_modules/preline/dist/*.js',
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     fontSize: {
@@ -15,6 +16,7 @@ export default {
       '2xl': ['24px', '29.26px'],
       '3xl': ['28px', '50px'],
       '4xl': ['48px', '58px'],
+      '6xl': ['80px', '58px'],
       '8xl': ['96px', '106px']
     },
     extend: {
@@ -38,10 +40,11 @@ export default {
       },
       screens: {
         "wide": "1440px"
-      }
+      },
     },
   },
   plugins: [
     require('preline/plugin'),
+    require('flowbite/plugin'),
   ],
 }
