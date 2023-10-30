@@ -17,7 +17,7 @@ const Header = () => {
       <Link to={'/'} className="flex items-center gap-1">
         <img src={logo} alt="logo" className="w-40 h-15"/>
       </Link>
-      <Button color="gray" className="w-96 max-lg:hidden h-10 items-center mt-3 text-white bg-red-500 border border-white shadow-md shadow-gray-300">
+      <Button color="gray" className="w-96 max-lg:hidden h-10 items-center mt-3 text-white bg-red-500 border border-white shadow-md shadow-gray-300 -ml-14">
           <a href="#places" className="text-xl">Find your next destination</a>
           <HiOutlineArrowDown className="ml-6 h-5 w-5 font-bold" />
       </Button>

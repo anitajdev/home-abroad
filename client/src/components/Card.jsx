@@ -21,6 +21,9 @@ const Card = () => {
                 <input id="payment" type="text" placeholder="ZIP CODE" />
             </div>
             <div>
+                
+            </div>
+            <div>
                 <Button color="gray" size="xl" className="mt-8 text-white bg-red-500 border border-white shadow-md shadow-gray-300">Confirm and pay</Button>
             </div>
         </div>
