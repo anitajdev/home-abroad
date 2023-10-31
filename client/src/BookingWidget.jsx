@@ -39,11 +39,11 @@ const BookingWidget = ({place}) => {
         return <Navigate to={redirect} />
     }
 
-    
+
   return (
     <div className="bg-white shadow p-4 rounded-2xl">
         <div className="text-2xl text-center">
-            Price: ${place.price} / per night
+            Price: {place.price}€ / per night
         </div>
         <div className="border rounded-2xl mt-4">
             <div className="flex">
