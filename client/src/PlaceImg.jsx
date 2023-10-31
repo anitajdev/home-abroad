@@ -5,11 +5,11 @@ const PlaceImg = ({place, index=0, className=null}) => {
     }
 
     if(!className) {
-        className = "object-cover";
+        className = "object-cover w-full";
     }
 
   return (
-    <img className={className} src={"http://localhost:4000/uploads/"+place.photos[index]} alt=""/>
+    <img className={className} src={"http://localhost:4000/uploads/"+place.photos[index]} alt="my-accommodation-img" />
   );
 }
 

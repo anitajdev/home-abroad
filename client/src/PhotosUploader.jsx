@@ -1,19 +1,7 @@
-import { useState } from "react";
 import axios from "axios";
 
 const PhotosUploader = ({addedPhotos, onChange}) => {
 
-    const [photoLink, setPhotoLink] = useState("");
-
-    async function addPhotobyLink (ev) {
-        ev.preventDefault();
-        const {data:filename} = await axios.post('/upload_by_link', {link: photoLink});
-        onChange(prev => {
-            return [...prev, filename];
-        });
-        setPhotoLink('');
-    }
-    
     function uploadPhoto (ev) {
         const files = ev.target.files;
         const data = new FormData();
@@ -45,12 +33,6 @@ const PhotosUploader = ({addedPhotos, onChange}) => {
 
   return (
     <>
-        <div className="flex gap-2">
-            <input value={photoLink} 
-                    onChange={ev => setPhotoLink(ev.target.value)}
-                    type="text" placeholder={"Add using a link ...jpg"} />
-            <button onClick={addPhotobyLink} className="bg-gray-200 px-4 rounded-2xl">Add&nbs;photo</button>
-        </div>
         <div className="mt-2 grid gap-2 grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {addedPhotos.length > 0 && addedPhotos.map(link => (
                 <div className="h-32 flex relative" key={link}>

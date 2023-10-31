@@ -39,8 +39,6 @@ const BookingWidget = ({place}) => {
         return <Navigate to={redirect} />
     }
 
-
-    
     
   return (
     <div className="bg-white shadow p-4 rounded-2xl">
@@ -53,38 +51,43 @@ const BookingWidget = ({place}) => {
                     <label>Check in:</label>
                     <input type="date"
                            value={checkIn}
-                           onChange={ev => setCheckIn(ev.target.value)}/>
+                           onChange={ev => setCheckIn(ev.target.value)}
+                           className="placeFormInput"/>
                 </div>
                 <div className="py-3 px-4 border-l">
                     <label>Check out:</label>
                     <input type="date"
                            value={checkOut}
-                           onChange={ev => setCheckOut(ev.target.value)}/>
+                           onChange={ev => setCheckOut(ev.target.value)}
+                           className="placeFormInput"/>
                 </div>
             </div>
             <div className="py-3 px-4 border-t">
                 <label>Number of guests:</label>
                 <input type="number"
                        value={numberOfGuests} 
-                       onChange={ev => setNumberOfGuests(ev.target.value)}/>
+                       onChange={ev => setNumberOfGuests(ev.target.value)}
+                       className="placeFormInput"/>
             </div>
             {numberOfNights > 0 && (
                 <div className="py-3 px-4 border-t">
                     <label>Your full name:</label>
                     <input type="text"
                            value={name} 
-                           onChange={ev => setName(ev.target.value)}/>
+                           onChange={ev => setName(ev.target.value)}
+                           className="placeFormInput"/>
                     <label>Phone number:</label>
                     <input type="tel"
                            value={phone} 
-                           onChange={ev => setPhone(ev.target.value)}/>
+                           onChange={ev => setPhone(ev.target.value)}
+                           className="placeFormInput"/>
                 </div> 
             )}
         </div>
-        <button onClick={bookThisPlace} className="primary mt-4">
-            Book this place
+        <button onClick={bookThisPlace} className="primary mt-4 flex items-center justify-center gap-2">
+            <span className="mt-0.5 text-xl">Book this place:</span>
             {numberOfNights > 0 && (
-                <span> ${numberOfNights * place.price}</span>
+                <span className="text-2xl mt-0.25"> {numberOfNights * place.price}€</span>
             )}
         </button>
     </div>

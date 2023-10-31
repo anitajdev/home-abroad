@@ -91,9 +91,9 @@ const PlacesFormPage = () => {
      <AccountNav />
      <form onSubmit={savePlace}>
         {preInput("Title", "Title for your place. Should be short and catchy as in advertisement")}
-        <input type="text" value={title || ""} onChange={ev => setTitle(ev.target.value)} placeholder="title, for example: My lovely apartment"/>
+        <input type="text" value={title || ""} onChange={ev => setTitle(ev.target.value)} placeholder="title, for example: My lovely apartment" className="placeFormInput"/>
         {preInput("Address", "Address to this place")}
-        <input type="text" value={address || ""} onChange={ev => setAddress(ev.target.value)} placeholder="address"/>
+        <input type="text" value={address || ""} onChange={ev => setAddress(ev.target.value)} placeholder="address" className="placeFormInput"/>
         {preInput("Photos", "More = better")}
         <PhotosUploader addedPhotos={addedPhotos} onChange={setAddedPhotos}/>
         {preInput("Description", "Description of the place")}
@@ -111,26 +111,30 @@ const PlacesFormPage = () => {
             <input type="text"
                    value={checkIn || ""}
                    onChange={ev => setCheckIn(ev.target.value)} 
-                   placeholder="14" />
+                   placeholder="14" 
+                   className="placeFormInput" />
            </div>
            <div>
             <h3 className="mt-2 -mb-1">Check out time</h3>
             <input type="text"
                    value={checkOut || ""} 
                    onChange={ev => setCheckOut(ev.target.value)} 
-                   placeholder="11" />
+                   placeholder="11" 
+                   className="placeFormInput" />
            </div>
            <div>
             <h3 className="mt-2 -mb-1">Max number of guests</h3>
             <input type="number"
                    value={maxGuests || ""}
-                   onChange={ev => setMaxGuests(ev.target.value)} />
+                   onChange={ev => setMaxGuests(ev.target.value)}
+                   className="placeFormInput" />
            </div>
            <div>
             <h3 className="mt-2 -mb-1">Price per night</h3>
             <input type="number"
                    value={price || ""}
-                   onChange={ev => setPrice(ev.target.value)} />
+                   onChange={ev => setPrice(ev.target.value)}
+                   className="placeFormInput" />
            </div>
            
         </div>

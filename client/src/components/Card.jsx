@@ -26,7 +26,7 @@ const Card = () => {
                     </svg>
                 </div>
                 <div className="flex">
-                    <input id="payment" type="text" placeholder="Expiration date (xx/xx)" maxLength={5} required value={expirationDate} onChange={e => setExpirationDate(e.target.value)}/>
+                    <input id="payment" type="text" placeholder="Expiration date (MM/YY)" maxLength={5} required value={expirationDate} onChange={e => setExpirationDate(e.target.value)}/>
                     <input id="payment" type="password" placeholder="CVV" maxLength={3} required value={cvv} onChange={e => setCvv(e.target.value)}/>
                 </div>
                 <div>
@@ -36,7 +36,7 @@ const Card = () => {
                     
                 </div>
                 <div>
-                    <Button color="gray" type="submit" size="xl" className="mt-8 text-white bg-red-500 border border-white shadow-md shadow-gray-300">Confirm and pay</Button>
+                    <Button color="gray" type="submit" size="xl" className="mt-5 text-white bg-red-500 border border-white shadow-md shadow-gray-300">Confirm and pay</Button>
                 </div>
             </form>
         </div>

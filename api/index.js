@@ -100,19 +100,6 @@ app.post('/logout', (req, res) => {
     res.cookie('token', '').json(true);
 });
 
-
-app.post('/upload_by_link', async (req, res) => {
-    const {link} = req.body;
-    const newName = 'photo' + Date.now() + '.jpg';
-    await imageDownloader.image({
-        url: link,
-        dest: __dirname + '/uploads/' + newName
-    });
-    res.json(newName);
-});
-
-
-
 const photosMiddleware = multer({dest:'uploads/'});
 app.post('/uploads', photosMiddleware.array('photos', 100), (req, res) => {
     const uploadedFiles = [];

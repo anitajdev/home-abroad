@@ -31,12 +31,21 @@ const PlacePage = () => {
         <div className="mt-8 mb-8 grid gap-8 grid-cols-1 md:grid-cols-[2fr_1fr]">
             <div>
                 <div className="my-4">
-                    <h2 className="font-semibold text-2xl">Description</h2>
+                    <h2 className="font-semibold text-2xl mb-3">Description</h2>
                     {place.description}
                 </div>
-                Check in: {place.checkIn} <br />
-                Check out: {place.checkOut} <br />
-                Max number of guests: {place.maxGuests}
+
+                <div className="my-8">
+                <h2 className="font-semibold text-xl mb-3">What this place offers</h2>
+                <ul className="ml-6">
+                    {place?.perks?.length > 0 && place.perks.map(perk => (
+                        <li className="list-disc uppercase text-gray-700">{perk}</li>
+                    ))}
+                </ul>
+                </div>
+                <span className="font-semibold">Check in:</span> {place.checkIn} <br />
+                <span className="font-semibold">Check out: </span> {place.checkOut} <br />
+                <span className="font-semibold">Max number of guests: </span>{place.maxGuests}
             </div>
             <div>
                 <BookingWidget place={place} />
