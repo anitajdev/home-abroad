@@ -1,6 +1,6 @@
-import {Link} from "react-router-dom";
-import {useContext} from "react";
-import {UserContext} from "../UserContext.jsx";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../components/UserContext";
 import logo from "../assets/icons/logo.png";
 
 'use client';
@@ -12,12 +12,11 @@ const Header = () => {
   const {user} = useContext(UserContext);
 
   return (
-    
-    <header className="flex justify-between padding-x py-6">
+    <header className="flex justify-between padding-x py-6 max-lg:px-2">
       <Link to={'/'} className="flex items-center gap-1">
         <img src={logo} alt="logo" className="w-40 h-15"/>
       </Link>
-      <Button color="gray" className="w-96 max-lg:hidden h-10 items-center mt-3 text-white bg-red-500 border border-white shadow-md shadow-gray-300 -ml-14">
+      <Button color="gray" className="w-96 max-lg:hidden h-10 items-center mt-3 text-white bg-red-500 border border-white shadow-md shadow-gray-300 mx-auto">
           <a href="#places" className="text-xl">Find your next destination</a>
           <HiOutlineArrowDown className="ml-6 h-5 w-5 font-bold" />
       </Button>
@@ -37,7 +36,7 @@ const Header = () => {
         )}
       </Link>
     </header>
-  )
+  );
 }
 
 export default Header

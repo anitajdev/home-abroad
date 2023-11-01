@@ -2,11 +2,10 @@ import RomeImg from "../assets/carousel/rome.jpg";
 import SantoriniImg from "../assets/carousel/santorini.jpg";
 import BarcelonaImg from "../assets/carousel/barcelona.jpg";
 import { Link } from "react-router-dom";
-import {useContext} from "react";
-import {UserContext} from "../UserContext.jsx";
+import { useContext } from "react";
+import { UserContext } from "../components/UserContext";
 
 'use client';
-
 import { Carousel } from 'flowbite-react';
 import { Button } from 'flowbite-react';
 

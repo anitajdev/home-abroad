@@ -1,8 +1,8 @@
-import PhotosUploader from "../PhotosUploader.jsx";
-import Perks from "../Perks.jsx";
+import PhotosUploader from "../components/PhotosUploader";
+import Perks from "../components/Perks";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import AccountNav from "../AccountNav.jsx";
+import AccountNav from "../components/AccountNav";
 import { Navigate, useParams } from "react-router-dom";
 
 const PlacesFormPage = () => {
@@ -19,6 +19,7 @@ const PlacesFormPage = () => {
   const [maxGuests, setMaxGuests] = useState(1);
   const [price, setPrice] = useState(100);
   const [redirect, setRedirect] = useState(false);
+
   useEffect(() => {
     if(!id) {
       return;
@@ -58,7 +59,6 @@ const PlacesFormPage = () => {
         </>
     );
   }
-
 
   async function savePlace (ev) {
     ev.preventDefault();
@@ -136,12 +136,11 @@ const PlacesFormPage = () => {
                    onChange={ev => setPrice(ev.target.value)}
                    className="placeFormInput" />
            </div>
-           
         </div>
         <button className="primary my-4">Save</button>
-    </form>
-</div>
-  )
+      </form>
+    </div>
+  );
 }
 
 export default PlacesFormPage

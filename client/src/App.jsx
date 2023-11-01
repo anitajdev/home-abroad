@@ -1,18 +1,16 @@
-import './App.css'
 import { Route, Routes } from "react-router-dom";
 import LoginPage from './pages/LoginPage';
 import Layout from './Layout';
 import IndexPage from './pages/IndexPage';
 import RegisterPage from './pages/RegisterPage';
 import axios from "axios";
-import { UserContextProvider } from './UserContext';
-import ProfilePage from './pages/ProfilePage.jsx';
+import { UserContextProvider } from './components/UserContext';
+import ProfilePage from './pages/ProfilePage';
 import PlacesPage from './pages/PlacesPage';
 import PlacesFormPage from './pages/PlacesFormPage';
 import PlacePage from './pages/PlacePage';
 import BookingsPage from './pages/BookingsPage';
 import PaymentPage from './pages/PaymentPage';
-import('preline')
 
 
 axios.defaults.baseURL= 'http://localhost:4000';
@@ -37,7 +35,7 @@ function App() {
         </Route>
       </Routes>
     </UserContextProvider>
-  )
+  );
 }
 
 export default App

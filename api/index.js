@@ -169,7 +169,6 @@ app.get('/places', async (req, res) => {
     res.json(await Place.find());
 });
 
-// name and phone booking form
 
 app.post('/bookings', async (req, res) => {
     const userData = await getUserDataFromReq(req);
@@ -185,7 +184,6 @@ app.post('/bookings', async (req, res) => {
     });
 });
 
-//
 
 app.get('/bookings', async (req, res) => {
    const userData = await getUserDataFromReq(req);

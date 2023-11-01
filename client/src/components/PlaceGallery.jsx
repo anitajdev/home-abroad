@@ -55,7 +55,7 @@ const PlaceGallery = ({place}) => {
             Show more photos
         </button>
     </div>
-  )
+  );
 }
 
 export default PlaceGallery

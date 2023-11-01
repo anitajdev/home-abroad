@@ -33,7 +33,6 @@ const Card = () => {
                     <input id="payment" type="text" placeholder="ZIP CODE" required value={zipCode} onChange={e => setZipCode(e.target.value)}/>
                 </div>
                 <div>
-                    
                 </div>
                 <div>
                     <Button color="gray" type="submit" size="xl" className="mt-5 text-white bg-red-500 border border-white shadow-md shadow-gray-300">Confirm and pay</Button>
@@ -52,9 +51,9 @@ const Card = () => {
                 </ul>
             </div>
             <div className="mt-3">
-                <p className="text-gray-500">I agree to the <span className="links">Host's House Rules,</span>
-                <span className="links"> Ground rules for guests,</span> 
-                <span className="links"> Rebooking and Refund Policy</span>.
+                <p className="text-gray-500">I agree to the <span className="link">Host's House Rules,</span>
+                <span className="link"> Ground rules for guests,</span> 
+                <span className="link"> Rebooking and Refund Policy</span>.
                 </p>
             </div>
         </div>

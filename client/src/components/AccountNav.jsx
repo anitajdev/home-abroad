@@ -38,7 +38,7 @@ const AccountNav = () => {
           My accommodations
         </Link>
       </nav>
-  )
+  );
 }
 
 export default AccountNav

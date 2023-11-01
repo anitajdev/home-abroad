@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import PlaceGallery from "../PlaceGallery";
-import BookingDates from "../BookingDates";
-import PlaceImg from "../PlaceImg";
-import AddressLink from "../AddressLink";
+import BookingDates from "../components/BookingDates";
+import PlaceImg from "../components/PlaceImg";
+import AddressLink from "../components/AddressLink";
 import Card from "../components/Card";
 
 const PaymentPage = () => {
@@ -41,7 +40,7 @@ const PaymentPage = () => {
             </div>
             <div className="flex rounded-2xl gap-4 mx-4 border border-gray-400 bg-white shadow-md shadow-gray-500">
                 <div className="w-48">
-                    <PlaceImg place={booking.place} className="rounded-l-2xl"/>
+                    <PlaceImg place={booking.place} className="rounded-l-2xl h-full" />
                 </div>
                 <div className="flex flex-col justify-center">
                     <h2 className="text-xl mr-4 leading-7">{booking.place.title}</h2>

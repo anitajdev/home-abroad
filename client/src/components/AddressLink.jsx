@@ -9,7 +9,7 @@ const AddressLink = ({children}) => {
             </svg>
             {children}
     </a>
-  )
+  );
 }
 
 export default AddressLink

@@ -22,8 +22,7 @@ const BookingDates = ({booking, className}) => {
             {format(new Date(booking.checkOut), "yyyy-MM-dd")}
         </div>
     </div>
-
-  )
+  );
 }
 
 export default BookingDates
